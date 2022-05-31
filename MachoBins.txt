@@ -1,0 +1,23 @@
+osascript
+leaks -quiet -atExit -- /path/to/binary (can execute any compiled binary on the system with args)
+screencapture -x -t jpg out.jpg - screenshots, but does require proper TCC
+mdimport -t -d3 [path_to_file] - can cat out file contents 
+find
+crontab
+openssl
+curl
+osacompile
+swift
+python
+ioreg -n Root -d1 -a | grep CGSSession (command to check whether screen is locked) - if locked you will see CGSSessionScreenIsLocked
+echo $((`ioreg -c IOHIDSystem | sed -e '/HIDIdleTime/ !{ d' -e 't' -e '}' -e 's/.* = //g' -e 'q'` / 1000000000)) (gets idle time, e.g. no keyboard or mouse interactions)
+gcc/clang, require installing developer tools
+perl
+ruby
+jrunscript - need java runtime installed, but can run java? Can spawn interactive shell
+rsync - https://gtfobins.github.io/gtfobins/rsync/
+ex - https://gtfobins.github.io/gtfobins/ex/
+fc - edit command shell history ?
+security - shows where keychains are, can let you delete them
+dsmemberutil - helpful for recon on users, can fetch SID/group info, etc
+cu - used for dial up normally, but can also be used for simple file transfers?
