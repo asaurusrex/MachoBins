@@ -21,3 +21,14 @@ fc - edit command shell history ?
 security - shows where keychains are, can let you delete them
 dsmemberutil - helpful for recon on users, can fetch SID/group info, etc
 cu - used for dial up normally, but can also be used for simple file transfers?
+sandbox-exec - this is a cmd-line binary to execute an application within a sandbox.  If you construct a .sb file like so:
+
+(version 1)
+(allow default)
+(allow process-exec
+    (literal "/bin/sh")
+    (literal "/usr/bin/sudo")
+    (with no-sandbox)
+)
+
+You can run sandbox-exec -f profile.sb /bin/sh as an example; this can let you run essentially any binary in an unsandbox'd way
